@@ -1,4 +1,4 @@
-// Fuatures Cash Out
+// Features Cash Out
 document.getElementById('cash-out-feature-button').addEventListener('click', (event) => {
         // event.preventDefault();
         // const addMoneyDiv = document.getElementById('add-money-div');
@@ -8,7 +8,7 @@ document.getElementById('cash-out-feature-button').addEventListener('click', (ev
         document.getElementById('cash-out-div').classList.remove('hidden');
         document.getElementById('add-money-div').classList.add('hidden');
     })
-    // Fuatures Add Money
+    // Features Add Money
 document.getElementById('add-money-feature-button').addEventListener('click', (event) => {
         // event.preventDefault();
         // const addMoneyDiv = document.getElementById('add-money-div');
