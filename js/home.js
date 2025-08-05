@@ -1,18 +1,22 @@
 // Fuatures Cash Out
 document.getElementById('cash-out-feature-button').addEventListener('click', (event) => {
-        event.preventDefault();
-        const addMoneyDiv = document.getElementById('add-money-div');
-        const cashOutDiv = document.getElementById('cash-out-div');
-        addMoneyDiv.style.display = 'none';
-        cashOutDiv.style.display = 'block';
+        // event.preventDefault();
+        // const addMoneyDiv = document.getElementById('add-money-div');
+        // const cashOutDiv = document.getElementById('cash-out-div');
+        // addMoneyDiv.style.display = 'none';
+        // cashOutDiv.style.display = 'block';
+        document.getElementById('cash-out-div').classList.remove('hidden');
+        document.getElementById('add-money-div').classList.add('hidden');
     })
     // Fuatures Add Money
 document.getElementById('add-money-feature-button').addEventListener('click', (event) => {
-        event.preventDefault();
-        const addMoneyDiv = document.getElementById('add-money-div');
-        const cashOutDiv = document.getElementById('cash-out-div');
-        addMoneyDiv.style.display = 'block';
-        cashOutDiv.style.display = 'none';
+        // event.preventDefault();
+        // const addMoneyDiv = document.getElementById('add-money-div');
+        // const cashOutDiv = document.getElementById('cash-out-div');
+        // addMoneyDiv.style.display = 'block';
+        // cashOutDiv.style.display = 'none';
+        document.getElementById('add-money-div').classList.remove('hidden');
+        document.getElementById('cash-out-div').classList.add('hidden');
     })
     // Add Money
 document.getElementById('button-add-money').addEventListener('click', (event) => {
