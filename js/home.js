@@ -1,3 +1,20 @@
+// Fuatures Cash Out
+document.getElementById('cash-out-feature-button').addEventListener('click', (event) => {
+        event.preventDefault();
+        const addMoneyDiv = document.getElementById('add-money-div');
+        const cashOutDiv = document.getElementById('cash-out-div');
+        addMoneyDiv.style.display = 'none';
+        cashOutDiv.style.display = 'block';
+    })
+    // Fuatures Add Money
+document.getElementById('add-money-feature-button').addEventListener('click', (event) => {
+        event.preventDefault();
+        const addMoneyDiv = document.getElementById('add-money-div');
+        const cashOutDiv = document.getElementById('cash-out-div');
+        addMoneyDiv.style.display = 'block';
+        cashOutDiv.style.display = 'none';
+    })
+    // Add Money
 document.getElementById('button-add-money').addEventListener('click', (event) => {
     event.preventDefault();
 
@@ -24,7 +41,7 @@ document.getElementById('button-add-money').addEventListener('click', (event) =>
         alert('Failed To add Money: Wrong Password');
     }
 });
-
+// Cash Out 
 document.getElementById('button-cash-out-money').addEventListener('click', () => {
     const reduceMoneyInput = document.getElementById('cash-out-input-field').value;
     const reduceMoneyPasswordInput = document.getElementById('cash-out-password-input-field').value;
