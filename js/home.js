@@ -26,13 +26,18 @@ document.getElementById('button-add-money').addEventListener('click', (event) =>
 });
 
 document.getElementById('button-cash-out-money').addEventListener('click', () => {
-    const reduceMoneyInput = document.getElementById('add-money-input-field').value;
-    const reduceMoneyPasswordInput = document.getElementById('add-money-password-input-field').value;
+    const reduceMoneyInput = document.getElementById('cash-out-input-field').value;
+    const reduceMoneyPasswordInput = document.getElementById('cash-out-password-input-field').value;
 
     if (reduceMoneyPasswordInput === '1234') {
         const accountBalance = document.getElementById('account-balance');
         const currentBalance = parseFloat(accountBalance.innerText);
         const newInputMoney = parseFloat(reduceMoneyInput);
+        if (isNaN(newInputMoney)) {
+            alert('Invalid Amount Entered');
+            return;
+        }
+
         if (!isNaN(newInputMoney)) {
             if (newInputMoney > currentBalance) {
                 alert("Insufficient balance.");
