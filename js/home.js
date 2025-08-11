@@ -15,17 +15,22 @@ document.getElementById('add-money-feature-button').addEventListener('click', (e
         // const cashOutDiv = document.getElementById('cash-out-div');
         // addMoneyDiv.style.display = 'block';
         // cashOutDiv.style.display = 'none';
+
         document.getElementById('add-money-div').classList.remove('hidden');
         document.getElementById('cash-out-div').classList.add('hidden');
     })
     // Add Money
+    // console.log('Add Money Loaded');
 document.getElementById('button-add-money').addEventListener('click', (event) => {
     event.preventDefault();
+    // console.log('Add Money Button Clicked');
+    // getInputFieldByID();
+    const addMoney = getInputFieldByID('add-money-input-field');
+    const pinNumber = getInputFieldByID('add-money-password-input-field');
+    console.log('add money value', addMoney, pinNumber);
 
-    const addedMoneyInput = document.getElementById('add-money-input-field').value;
-    const addedMoneyPasswordInput = document.getElementById('add-money-password-input-field').value;
 
-    if (addedMoneyPasswordInput === '1234') {
+    if (pinNumber === 1234) {
         const accountBalance = document.getElementById('account-balance');
         const currentBalance = parseFloat(accountBalance.innerText);
         const newInputMoney = parseFloat(addedMoneyInput);
