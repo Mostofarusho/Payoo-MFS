@@ -5,8 +5,9 @@ document.getElementById('cash-out-feature-button').addEventListener('click', (ev
         // const cashOutDiv = document.getElementById('cash-out-div');
         // addMoneyDiv.style.display = 'none';
         // cashOutDiv.style.display = 'block';
-        document.getElementById('cash-out-div').classList.remove('hidden');
-        document.getElementById('add-money-div').classList.add('hidden');
+        // document.getElementById('cash-out-div').classList.remove('hidden');
+        // document.getElementById('add-money-div').classList.add('hidden');
+        showASectionByID('cash-out-div');
     })
     // Features Add Money
 document.getElementById('add-money-feature-button').addEventListener('click', (event) => {
@@ -16,8 +17,15 @@ document.getElementById('add-money-feature-button').addEventListener('click', (e
         // addMoneyDiv.style.display = 'block';
         // cashOutDiv.style.display = 'none';
 
-        document.getElementById('add-money-div').classList.remove('hidden');
-        document.getElementById('cash-out-div').classList.add('hidden');
+        // document.getElementById('add-money-div').classList.remove('hidden');
+        // document.getElementById('cash-out-div').classList.add('hidden');
+
+        showASectionByID('add-money-div');
+    })
+    // Features Transactions
+document.getElementById('transactions-feature-button').addEventListener('click', (event) => {
+        showASectionByID('transaction-history-div');
+
     })
     // Add Money
     // console.log('Add Money Loaded');
