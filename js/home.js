@@ -47,6 +47,13 @@ document.getElementById('button-add-money').addEventListener('click', (event) =>
         if (!isNaN(addMoney)) {
             const newBalance = accountBalance + addMoney;
             document.getElementById('account-balance').innerText = newBalance.toFixed(2);
+            // Add To Transaction History
+            const p = document.createElement('p');
+            p.innerText = `Added Money ${addMoney} Tk. New Balance is ${newBalance}`;
+            console.log(p);
+
+            // Should be a common function 
+            document.getElementById('transaction-container').appendChild(p);
             console.log('New Balance:', newBalance);
             alert('Money added successfully!');
             document.getElementById('add-money-input-field').value = '';
