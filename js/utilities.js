@@ -9,3 +9,9 @@ function getInputFieldByID(id) {
     return inputMoneyNumber;
     // const addedMoneyPasswordInput = document.getElementById('add-money-password-input-field').value;
 }
+
+function getTextFieldValueByID(id) {
+    const textValue = document.getElementById(id).innerText;
+    const textNumber = parseFloat(textValue);
+    return textNumber;
+}

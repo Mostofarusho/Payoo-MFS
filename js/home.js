@@ -31,13 +31,14 @@ document.getElementById('button-add-money').addEventListener('click', (event) =>
 
 
     if (pinNumber === 1234) {
-        const accountBalance = document.getElementById('account-balance');
-        const currentBalance = parseFloat(accountBalance.innerText);
-        const newInputMoney = parseFloat(addedMoneyInput);
+        const accountBalance = getTextFieldValueByID('account-balance');
+        // const currentBalance = parseFloat(accountBalance.innerText);
+        // const newInputMoney = parseFloat(addMoney);
+        console.log(accountBalance, addMoney);
 
-        if (!isNaN(newInputMoney)) {
-            const newBalance = currentBalance + newInputMoney;
-            accountBalance.innerText = newBalance.toFixed(2);
+        if (!isNaN(addMoney)) {
+            const newBalance = accountBalance + addMoney;
+            document.getElementById('account-balance').innerText = newBalance.toFixed(2);
             console.log('New Balance:', newBalance);
             alert('Money added successfully!');
             document.getElementById('add-money-input-field').value = '';
@@ -52,25 +53,24 @@ document.getElementById('button-add-money').addEventListener('click', (event) =>
 });
 // Cash Out 
 document.getElementById('button-cash-out-money').addEventListener('click', () => {
-    const reduceMoneyInput = document.getElementById('cash-out-input-field').value;
-    const reduceMoneyPasswordInput = document.getElementById('cash-out-password-input-field').value;
+    const reduceMoneyInput = getInputFieldByID('cash-out-input-field');
+    const reduceMoneyPasswordInput = getInputFieldByID('cash-out-password-input-field');
 
-    if (reduceMoneyPasswordInput === '1234') {
-        const accountBalance = document.getElementById('account-balance');
-        const currentBalance = parseFloat(accountBalance.innerText);
-        const newInputMoney = parseFloat(reduceMoneyInput);
-        if (isNaN(newInputMoney)) {
+    if (reduceMoneyPasswordInput === 1234) {
+        const currentBalance = getTextFieldValueByID('account-balance');
+
+        if (isNaN(reduceMoneyInput)) {
             alert('Invalid Amount Entered');
             return;
         }
 
-        if (!isNaN(newInputMoney)) {
-            if (newInputMoney > currentBalance) {
+        if (!isNaN(reduceMoneyInput)) {
+            if (reduceMoneyInput > currentBalance) {
                 alert("Insufficient balance.");
                 return;
             }
-            const newBalance = currentBalance - newInputMoney;
-            accountBalance.innerText = newBalance.toFixed(2);
+            const newBalance = currentBalance - reduceMoneyInput;
+            document.getElementById('account-balance').innerText = newBalance.toFixed(2);
             console.log('Reduce Money', accountBalance);
             alert('Money Reduce Successfully')
             document.getElementById('add-money-input-field').value = '';
