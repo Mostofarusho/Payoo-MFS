@@ -47,13 +47,14 @@ document.getElementById('button-add-money').addEventListener('click', (event) =>
         if (!isNaN(addMoney)) {
             const newBalance = accountBalance + addMoney;
             document.getElementById('account-balance').innerText = newBalance.toFixed(2);
-            // Add To Transaction History
+            // Add To Transaction History Start
             const p = document.createElement('p');
             p.innerText = `Added Money ${addMoney} Tk. New Balance is ${newBalance}`;
             console.log(p);
 
             // Should be a common function 
             document.getElementById('transaction-container').appendChild(p);
+            // Add To Transaction History End
             console.log('New Balance:', newBalance);
             alert('Money added successfully!');
             document.getElementById('add-money-input-field').value = '';
@@ -86,6 +87,17 @@ document.getElementById('button-cash-out-money').addEventListener('click', () =>
             }
             const newBalance = currentBalance - reduceMoneyInput;
             document.getElementById('account-balance').innerText = newBalance.toFixed(2);
+            // Add To Transaction History Start
+            const div = document.createElement('div');
+            div.classList.add('bg-yellow-300');
+            div.classList.add('text-center');
+            div.innerHTML = `
+            <h4 class="text-2xl font-bold">Cash Out</h4>
+            <p>${reduceMoneyInput} Withdraw. New Balance ${newBalance}</p>
+
+            `
+            document.getElementById('transaction-container').appendChild(div);
+            // Add To Transaction History End
             console.log('Reduce Money', accountBalance);
             alert('Money Reduce Successfully')
             document.getElementById('add-money-input-field').value = '';
